@@ -16,12 +16,17 @@ P = 5250; %[N]
 Cya = 4; %[1/rad]
 rho = 1.225; %[kg/m^3]
 g = 9.81; %[m/s^2]
-% Initial condition
+% Initial data
 theta(1) = deg2rad(0); %[grad]->[rad]
+% Vehicle#1
 X(1) = 0; Y(1) = 600; %[m]
+% Vehicle#2
 Xc(1) = 500; Yc(1) = 500; %[m]
+% Initial distance
 r(1) = sqrt((X(1)-Xc(1))^2 + (Y(1)-Yc(1))^2); %[m]
+% Initial sight angle
 phi(1) = atan((Y(1)-Yc(1))/(X(1)-Xc(1))); %[rad]
+% Angle of attack
 alpha(1) = phi(1) - theta(1);
 % Input data for simulation
 tk = 100; dt = 0.01;  %[s]
