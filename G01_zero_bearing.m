@@ -20,7 +20,7 @@ g = 9.81; %[m/s^2]
 theta(1) = deg2rad(0); %[grad]->[rad]
 % Vehicle#1
 X(1) = 0; Y(1) = 600; %[m]
-% Vehicle#2
+% Vehicle#2 (steering)
 Xc(1) = 500; Yc(1) = 500; %[m]
 % Initial distance
 r(1) = sqrt((X(1)-Xc(1))^2 + (Y(1)-Yc(1))^2); %[m]
@@ -29,7 +29,8 @@ phi(1) = atan((Y(1)-Yc(1))/(X(1)-Xc(1))); %[rad]
 % Angle of attack
 alpha(1) = phi(1) - theta(1);
 % Input data for simulation
-tk = 100; dt = 0.01;  %[s]
+tk = 100; %end time, [s]
+dt = 0.01; % step time, [s]
 N = tk/dt; % number of iterations
 % Plotting#1
 figure(1);hold on
